@@ -6,6 +6,7 @@
 
 ## Code Strudcture
 ```python
+retriever
 ├── downstream_modules  # util functions 
 │   ├── data_utils.py       # data loader 관련 
 │   ├── train_utils.py      # training process 관련
@@ -18,6 +19,9 @@
 │── dataset.py               # support_set, query_set 로드 관련
 │── utils.py               # misc
 └── main.py        # 학습을 위한 main 함수 
+
+── data_folder     # pre-defined dataset
+── -.pth           # pretrained weight  
 ```
 
 ## Environment Setting
