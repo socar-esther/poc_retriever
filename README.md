@@ -1,2 +1,41 @@
-# poc_retriever
-세차검수 레이블링 작업 간소화를 위한 retriever 모델
+# Retrieval Module For Open-set Labeling
+
+## TL;DL
+- support_set (=사람이 지정해주는 샘플 데이터)를 사용하여 전체 query_set(=from open-set DB) 중 support_set과 같은 클래스로 간주되는 것에 대한 우선순위를 매긴다
+- support_set의 갯수는 batch_size에 의해서 결정되며, 머신에 따라 size 조정이 가능
+
+## Code Strudcture
+```python
+├── downstream_modules  # util functions 
+│   ├── data_utils.py       # data loader 관련 
+│   ├── train_utils.py      # training process 관련
+│   └── utils.py            # misc 
+├── model               # model architecture 관련 (ResNet, PMG)
+│── run                 # shell scripts for training 
+│── result               # retrieved results
+│   ├── ...
+│── config.py               # pretrained model load, dataset setting 관련
+│── dataset.py               # support_set, query_set 로드 관련
+│── utils.py               # misc
+└── main.py        # 학습을 위한 main 함수 
+```
+
+## Environment Setting
+```
+pip install easydict
+```
+
+## Download pre-trained model weights
+```python
+# sofar v3 best model 
+gstuil cp gs://socar-data-temp/tigger/artifacts/car_state_classifier/sofar_v3_best_model/imagenet=ce_sofarv3=byol_finetune_best_model.pth path_to_save
+
+# (USE THIS) sofar v3 + calibration best model 
+gsutil cp gs://socar-data-temp/tigger/artifacts/car_state_classifier/sofar_v3_best_model/calibrated_lb_smooth=0.05/lb_smooth=0.05_best_model.pth path_to_save
+```
+
+## How To Retrieve
+```python
+python main.py 
+````
+
