@@ -7,25 +7,26 @@
 ## Code Strudcture
 ```python
 retriever
-├── downstream_modules  # util functions 
-│   ├── data_utils.py       # data loader 관련 
-│   ├── train_utils.py      # training process 관련
-│   └── utils.py            # misc 
-├── model               # model architecture 관련 (ResNet, PMG)
-│── run                 # shell scripts for training 
+├── downstream_modules   # util functions 
+│   ├── data_utils.py       
+│   ├── train_utils.py      
+│   └── utils.py             
+├── model                # model architecture 관련 (ResNet, PMG)
+├── ...
 │── result               # retrieved results
 │   ├── ...
-│── config.py               # pretrained model load, dataset setting 관련
-│── dataset.py               # support_set, query_set 로드 관련
-│── utils.py               # misc
-└── main.py        # 학습을 위한 main 함수 
+│── config.py            # pretrained model load, dataset setting 관련
+│── dataset.py           # support_set, query_set 로드 관련
+│── utils.py             # misc
+└── main.py              # 학습을 위한 main 함수 
 
-── data_folder     # pre-defined dataset
-── -.pth           # pretrained weight  
+── data_folder           # pre-defined dataset
+── -.pth                 # pretrained weight  
 ```
 
 ## Environment Setting
 ```
+pip3 install torch==1.10.2+cu113 torchvision==0.11.3+cu113 -f https://download.pytorch.org/whl/cu113/torch_stable.html
 pip install easydict
 ```
 
