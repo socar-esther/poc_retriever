@@ -2,7 +2,9 @@
 
 ## TL;DL
 - support_set (=사람이 지정해주는 샘플 데이터)를 사용하여 전체 query_set(=from open-set DB) 중 support_set과 같은 클래스로 간주되는 것에 대한 우선순위를 매긴다
-- support_set의 갯수는 batch_size에 의해서 결정되며, 머신에 따라 size 조정이 가능
+- 즉 query 데이타가 모든 support set과의 거리를 구하고, 그 distance mean이 가까운 순서대로 나열되는 형태이다
+- retrieve하고자 하는 클래스의 수가 N개 라면, 이 과정을 총 N번 반복하는 것
+- 여기서 support_set의 갯수는 batch_size에 의해서 결정되며, 머신에 따라 size 조정이 가능
 
 ## Code Strudcture
 ```python
