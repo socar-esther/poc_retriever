@@ -41,6 +41,12 @@ gstuil cp gs://socar-data-temp/tigger/artifacts/car_state_classifier/sofar_v3_be
 gsutil cp gs://socar-data-temp/tigger/artifacts/car_state_classifier/sofar_v3_best_model/calibrated_lb_smooth=0.05/lb_smooth=0.05_best_model.pth path_to_save
 ```
 
+## Download support sets (candidates)
+```python
+gsutil cp gs://socar-data-temp/esther/car_state_classifier/support_set_candidates/08_inner_cupholder_dirt.zip .
+gsutil cp gs://socar-data-temp/esther/car_state_classifier/support_set_candidates/16_inner_seat_dirt.zip .
+```
+
 ## How To Retrieve
 ```python
 python main.py 
