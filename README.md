@@ -20,8 +20,8 @@ retriever
 │── utils.py             # misc
 └── main.py              # 학습을 위한 main 함수 
 
-── data_folder           # pre-defined dataset
-── -.pth                 # pretrained weight  
+── data_folder           # pre-defined dataset (직접 데이터 추가필요)
+── -.pth                 # pretrained weight   (직접 pretrained weight 추가필요)
 ```
 
 ## Environment Setting
