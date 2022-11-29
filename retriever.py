@@ -31,32 +31,32 @@ class retriever:
         for idx, support_loader in enumerate(self.support_loaders) :
             # start retrieve
             support_set_features = get_support_vectors(support_loader, self.model)
-            sorted_dict = retrieve(self.model, self.query_dataset, self.query_loader, support_set_features)
+            result_dict = retrieve(self.model, self.query_dataset, self.query_loader, support_set_features)
 
             # save the result
-            tmp_sorted_order_list = list()
+            tmp_sorted_dist_list = list()
             
-            for file_idx, file_path in enumerate(sorted_dict) :
-                tmp_sorted_order_list.append(file_path[0])
+            for file_nm, distance in result_dict.items() :
+                tmp_sorted_dist_list.append(distance)
 
             del support_set_features
-            del sorted_dict
+            del result_dict
             
             if idx == 0 :
-                sorted_08_order_list = tmp_sorted_order_list.copy()
+                sorted_08_dist_list = tmp_sorted_dist_list.copy()
                 
             elif idx == 1:
-                sorted_16_order_list = tmp_sorted_order_list.copy()
+                sorted_16_dist_list = tmp_sorted_dist_list.copy()
                 
         
-        return sorted_08_order_list, sorted_16_order_list
+        return sorted_08_dist_list, sorted_16_dist_list
         
         
 if __name__ == '__main__' :
     args = get_config()
     retriever = retriever(args)
-    sorted_08_order_list, sorted_16_order_list = retriever.inference() # want to add this! 
+    sorted_08_dist_list, sorted_16_dist_list = retriever.inference() # want to add this! 
     
-    #print('sorted class 08 Top10:', sorted_08_order_list[:10])
-    #print('sorted class 16 Top10:', sorted_16_order_list[:10])
+    #print('distance with class 08 data:', sorted_08_dist_list[:10]) 
+    #print('distance with class 16 data:', sorted_16_dist_list[:10])
     
