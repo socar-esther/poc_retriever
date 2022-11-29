@@ -60,7 +60,7 @@ gstuil cp gs://socar-data-temp/tigger/artifacts/car_state_classifier/sofar_v3_be
 gsutil cp gs://socar-data-temp/tigger/artifacts/car_state_classifier/sofar_v3_best_model/calibrated_lb_smooth=0.05/lb_smooth=0.05_best_model.pth path_to_save
 ```
 
-## How To Retrieve
+## How To Run
 ```python
 python retriever.py 
 ````
