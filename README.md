@@ -15,12 +15,10 @@ retriever
 │   └── utils.py             
 ├── model                # model architecture 관련 (ResNet, PMG)
 ├── ...
-│── result               # retrieved results
-│   ├── ...
 │── config.py            # pretrained model load, dataset setting 관련
 │── dataset.py           # support_set, query_set 로드 관련
 │── utils.py             # misc
-└── main.py              # 학습을 위한 main 함수 
+└── retriever.py              # 학습을 위한 main 함수 
 
 ── data_folder           # pre-defined dataset (직접 데이터 추가필요)
 ── -.pth                 # pretrained weight   (직접 pretrained weight 추가필요)
@@ -49,6 +47,6 @@ gsutil cp gs://socar-data-temp/esther/car_state_classifier/support_set_candidate
 
 ## How To Retrieve
 ```python
-python main.py 
+python retriever.py 
 ````
 
