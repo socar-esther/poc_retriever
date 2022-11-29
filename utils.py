@@ -93,8 +93,10 @@ def retrieve(model, query_dataset, query_loader, support_set_features):
             distance_list.append(dist)
         avg_dist = np.mean(distance_list)
         result_dict[img_path] = avg_dist
-
-    sorted_dict = sorted(result_dict.items(), key = lambda item: item[1])
-    # sorted_dict_50 = sorted_dict[:50]  # top 50
+        
+    # for Log
+    #sorted_dict = sorted(result_dict.items(), key = lambda item: item[1])
+    #print(sorted_dict)
     
-    return sorted_dict
+    #print('check result_dict:', result_dict)
+    return result_dict
