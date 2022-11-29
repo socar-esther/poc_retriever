@@ -16,7 +16,7 @@ retriever
 │── config.py            # pretrained model load, dataset setting 관련
 │── dataset.py           # support_set, query_set 로드 관련
 │── utils.py             # misc
-└── retriever.py              # 학습을 위한 main 함수 
+└── retriever.py         # retrieve를 하기 위한 main 함수 
 
 ── data_folder           # pre-defined dataset (직접 데이터 추가필요)
 ── -.pth                 # pretrained weight   (직접 pretrained weight 추가필요)
